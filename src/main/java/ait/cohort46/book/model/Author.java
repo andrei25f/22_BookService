@@ -20,7 +20,7 @@ public class Author implements Serializable {
     private String name;
     @Column(name = "birth_date")
     private LocalDate birthDate;
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors", cascade = CascadeType.REMOVE)
     private Set<Book> books;
 
     public Author(String name, LocalDate birthDate) {
